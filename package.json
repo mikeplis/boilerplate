@@ -6,9 +6,10 @@
     "private": true,
     "scripts": {
         "build": "webpack",
-        "dev": "webpack-dev-server --open",
+        "build:watch": "webpack-dev-server",
         "test": "jest",
-        "test:watch": "yarn test --watch"
+        "test:watch": "yarn test --watch",
+        "dev": "concurrently -c magenta.bold,cyan -n test,build \"yarn test:watch\" \"yarn build:watch\""
     },
     "dependencies": {
         "react": "^16.8.3",
@@ -20,6 +21,7 @@
         "@babel/preset-react": "^7.0.0",
         "babel-eslint": "9.x",
         "babel-loader": "^8.0.5",
+        "concurrently": "^4.1.0",
         "eslint": "5.x",
         "eslint-config-react-app": "^3.0.7",
         "eslint-plugin-flowtype": "2.x",
