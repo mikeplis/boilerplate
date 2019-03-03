@@ -9,6 +9,8 @@
         "build:watch": "webpack-dev-server",
         "test": "jest",
         "test:watch": "yarn test --watch",
+        "format": "prettier",
+        "lint": "eslint",
         "dev": "concurrently -c magenta.bold,cyan -n test,build \"yarn test:watch\" \"yarn build:watch\""
     },
     "dependencies": {

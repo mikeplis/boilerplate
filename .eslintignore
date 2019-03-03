@@ -1,0 +1,3 @@
+# can't run eslint as pre-commit hook without telling it to ignore this file.
+# don't think this is ideal since it might happen to other files too
+package.json
