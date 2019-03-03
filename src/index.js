@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const App = () => {
+import { Button } from './components/Button';
+
+export const App = () => {
     const [state, setState] = React.useState(0);
     return (
         <div>
-            <button onClick={() => setState(state + 1)}>{state}</button>
+            <Button onClick={() => setState(state + 1)}>{state}</Button>
         </div>
     );
 };
