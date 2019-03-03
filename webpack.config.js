@@ -20,6 +20,21 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader',
             },
+            {
+                test: /\.module\.css$/,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true,
+                            importLoaders: 1,
+                            localIdentName:
+                                '[folder]__[local]--[hash:base64:5]',
+                        },
+                    },
+                ],
+            },
         ],
     },
 };

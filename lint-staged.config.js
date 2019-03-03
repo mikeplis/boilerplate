@@ -1,5 +1,6 @@
 module.exports = {
-    '*.{js,json,css,md}': [
+    '*.{json,css,md}': ['yarn format --write', 'git add'],
+    '*.js': [
         'yarn format --write',
         'yarn lint --fix',
         'git add',

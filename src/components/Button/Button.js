@@ -1,5 +1,9 @@
 import React from 'react';
 
+import styles from './Button.module.css';
+
 export const Button = ({ onClick, children }) => (
-    <button onClick={onClick}>{children}</button>
+    <button className={styles.button} onClick={onClick}>
+        {children}
+    </button>
 );
