@@ -1,0 +1,5 @@
+.{{ camelCase componentName }} {
+    outline: 1px solid red;
+    width: 2em;
+    height: 1em;
+}

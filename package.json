@@ -12,6 +12,7 @@
         "format": "prettier",
         "js:lint": "eslint",
         "style:lint": "stylelint",
+        "generate": "plop",
         "dev": "concurrently -c magenta.bold,cyan -n test,build \"yarn test:watch\" \"yarn build:watch\""
     },
     "dependencies": {
@@ -37,6 +38,7 @@
         "jest": "^24.1.0",
         "jest-dom": "^3.1.2",
         "lint-staged": "^8.1.5",
+        "plop": "^2.3.0",
         "prettier": "1.16.4",
         "react-testing-library": "^6.0.0",
         "style-loader": "^0.23.1",
