@@ -10,11 +10,10 @@
         "test": "jest",
         "test:watch": "yarn test --watch",
         "format": "prettier",
-        "js:lint": "eslint",
-        "style:lint": "stylelint",
+        "lint:js": "eslint",
+        "lint:style": "stylelint",
         "generate": "plop",
-        "docs:dev": "docz dev",
-        "docs:build": "docz build",
+        "docs": "docz",
         "dev": "concurrently -c magenta.bold,cyan -n test,build \"yarn test:watch\" \"yarn build:watch\""
     },
     "dependencies": {
