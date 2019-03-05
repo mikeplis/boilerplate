@@ -13,6 +13,8 @@
         "js:lint": "eslint",
         "style:lint": "stylelint",
         "generate": "plop",
+        "docs:dev": "docz dev",
+        "docs:build": "docz build",
         "dev": "concurrently -c magenta.bold,cyan -n test,build \"yarn test:watch\" \"yarn build:watch\""
     },
     "dependencies": {
@@ -27,6 +29,8 @@
         "babel-loader": "^8.0.5",
         "concurrently": "^4.1.0",
         "css-loader": "^2.1.0",
+        "docz": "^0.13.7",
+        "docz-theme-default": "^0.13.7",
         "eslint": "5.x",
         "eslint-config-react-app": "^3.0.7",
         "eslint-plugin-flowtype": "2.x",
@@ -40,6 +44,7 @@
         "lint-staged": "^8.1.5",
         "plop": "^2.3.0",
         "prettier": "1.16.4",
+        "prop-types": "^15.7.2",
         "react-testing-library": "^6.0.0",
         "style-loader": "^0.23.1",
         "stylelint": "^9.10.1",
