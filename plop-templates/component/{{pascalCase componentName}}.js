@@ -8,5 +8,10 @@ export const {{ pascalCase componentName }} = (props) => (
 );
 
 {{ pascalCase componentName }}.propTypes = {
-    appId: PropTypes.string.isRequired,
+    /** ID used for tracking and automation */
+    appId: PropTypes.string,
 };
+
+{{ pascalCase componentName }}.defaultProps = {
+    appId: '{{ camelCase componentName }}'
+}

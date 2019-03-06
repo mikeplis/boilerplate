@@ -10,5 +10,9 @@ export const Button = ({ onClick, children }) => (
 );
 
 Button.propTypes = {
-    appId: PropTypes.string.isRequired,
+    appId: PropTypes.string,
+};
+
+Button.defaultProps = {
+    appId: 'button',
 };
