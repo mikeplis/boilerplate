@@ -14,6 +14,8 @@
         "lint:style": "stylelint",
         "generate": "plop",
         "docs": "docz",
+        "docs:dev": "yarn docs dev",
+        "docs:build": "yarn docs build",
         "dev": "concurrently -c magenta.bold,cyan -n test,build \"yarn test:watch\" \"yarn build:watch\""
     },
     "dependencies": {
