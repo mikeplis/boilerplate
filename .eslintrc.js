@@ -1,3 +1,6 @@
 module.exports = {
-    extends: 'react-app'
+    extends: 'react-app',
+    rules: {
+        'react/forbid-foreign-prop-types': 'off',
+    },
 };

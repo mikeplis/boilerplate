@@ -1,13 +1,15 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+const isDev = process.env.NODE_ENV !== 'production';
+
+// TODO: dedupe from webpack.config.js
 module.exports = {
     src: './src',
-    title: 'Docs',
     modifyBundlerConfig: config => {
-        config.resolve.extensions.push('.scss');
         config.module.rules.push({
-            // TODO: dedupe this from webpack config
             test: /\.module\.css$/,
             use: [
-                'style-loader',
+                isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
                 {
                     loader: 'css-loader',
                     options: {
@@ -16,6 +18,7 @@ module.exports = {
                         localIdentName: '[folder]__[local]--[hash:base64:5]',
                     },
                 },
+                'postcss-loader',
             ],
         });
 

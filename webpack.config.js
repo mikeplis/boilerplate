@@ -1,7 +1,16 @@
 const path = require('path');
+const glob = require('glob');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const PurgecssPlugin = require('purgecss-webpack-plugin');
+
+const isDev = process.env.NODE_ENV !== 'production';
+
+const PATHS = {
+    src: path.join(__dirname, 'src'),
+};
 
 module.exports = {
-    mode: 'development',
+    mode: isDev ? 'development' : 'production',
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',
@@ -23,7 +32,7 @@ module.exports = {
             {
                 test: /\.module\.css$/,
                 use: [
-                    'style-loader',
+                    isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -33,8 +42,20 @@ module.exports = {
                                 '[folder]__[local]--[hash:base64:5]',
                         },
                     },
+                    'postcss-loader',
                 ],
             },
         ],
     },
+    plugins: [
+        new MiniCssExtractPlugin({
+            // filename: isDev ? '[name].css' : '[name].[hash].css',
+            // chunkFilename: isDev ? '[id].css' : '[id].[hash].css',
+            filename: '[name].css',
+            chunkFilename: '[id].css',
+        }),
+        new PurgecssPlugin({
+            paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
+        }),
+    ],
 };
